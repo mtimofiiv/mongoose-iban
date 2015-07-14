@@ -38,4 +38,10 @@ describe('On validation', function() {
     var Model = new SampleModel({ iban: 'NL39 RABO 0300 0652 64' });
     expect(Model.validate).to.throw(Error);
   });
+
+  it('stores the proper IBAN value', function() {
+    var Model = new SampleModel({ iban: 'NL39 RABO 0300 0652 64' });
+    Model.validate();
+    expect(Model.iban).to.equal('NL39 RABO 0300 0652 64');
+  });
 });
