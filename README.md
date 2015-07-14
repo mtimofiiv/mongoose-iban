@@ -10,9 +10,9 @@ Start with an `npm install --save mongoose-iban`
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-require('mongoose-iban');
+require('mongoose-iban').loadType(mongoose);
 
-var Iban = mongoose.Types.Iban;
+var Iban = Schema.Types.Iban;
 
 var BankAccountSchema = new Schema({
   accountNumber: { type: Iban }
